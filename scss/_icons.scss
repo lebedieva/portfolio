@@ -1,0 +1,132 @@
+[class*="icon-"]{
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	z-index: 3;
+	margin-right: 5px;
+	background: url('../images/sprite.png') no-repeat;
+}
+.icon-longevity{
+	background-position: 0 -26px;
+	background-size: 170px 138px;
+}
+.icon-pencil{
+	background-position: -57.5px -26px;
+	background-size: 170px 138px;
+}
+.icon-test{
+	background-position: -114px -26px;
+	background-size: 170px 138px;
+}
+.icon-address{
+	background-position: -91px -0.8px;
+	background-size: 135.6px 110px;
+	width: 13px;
+	height: 18px;
+}
+.icon-i{
+	background-position: -205px -135px;
+	width: 24px;
+	height: 24px;
+}
+.icon-healing{
+	background-position: -315px -135px;
+	width: 24px;
+	height: 24px;
+}
+.icon-book{
+	background-position: -235px -136px;
+	width: 24px;
+	height: 24px;
+}
+.icon-man{
+	background-position: -94px -82px;
+	background-size: 170px 138px;
+	width: 22px;
+	height: 22px;
+}
+.icon-gift{
+	background-position: 0 -82px;
+	background-size: 170px 138px;
+	width: 22px;
+	height: 22px;
+}
+.icon-wheel{
+	background-position: -46px -82px;
+	background-size: 170px 138px;
+	width: 22px;
+	height: 22px;
+}
+.icon-questions{
+	background-position: 0 -54px;
+	background-size: 170px 138px;
+	width: 24px;
+	height: 26px;
+}
+.icon-question{
+	background-position: -51px -54px;
+	background-size: 170px 138px;
+	width: 24px;
+	height: 26px;
+}
+
+// hover
+li:hover,
+[class*="btn"]:hover{
+	.icon-longevity{
+		background-position: -29px -26px;
+	}
+	.icon-pencil{
+		background-position: -86px -26px;
+	}
+	.icon-test{
+		background-position: -141.5px -26px;
+	}
+	.icon-address{
+		background-position: -111px -0.8px;
+	}
+	.icon-i{
+		background-position: -205px -108px;
+	}
+	.icon-healing{
+		background-position: -288px -135px;
+	}
+	.icon-book{
+		background-position: -262px -136px;
+	}
+	.icon-man{
+		background-position: -118px -82px;
+	}
+	.icon-gift{
+		background-position: -24px -82px;
+	}
+	.icon-wheel{
+		background-position: -70px -82px;
+	}
+	.icon-questions{
+		background-position: -26px -54px;
+	}
+	.icon-question{
+		background-position: -77px -54px;
+	}
+}
+.active{
+	.icon-i{
+		background-position: -205px -108px;
+	}
+	.icon-healing{
+		background-position: -288px -135px;
+	}
+	.icon-book{
+		background-position: -262px -136px;
+	}
+	.icon-man{
+		background-position: -118px -82px;
+	}
+	.icon-gift{
+		background-position: -24px -82px;
+	}
+	.icon-wheel{
+		background-position: -70px -82px;
+	}
+}

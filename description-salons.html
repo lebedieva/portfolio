@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>NugaBest</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/select2.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href='https://fonts.googleapis.com/css?family=Exo+2:400,100&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<script src="https://api-maps.yandex.ru/1.1/index.xml"></script>
+	<script>
+		// Создает обработчик события window.onLoad
+		YMaps.jQuery(function () {
+			// Создает экземпляр карты и привязывает его к созданному контейнеру
+			var map = new YMaps.Map(YMaps.jQuery("#ymaps")[0]);
+			map.addControl(new YMaps.Zoom());
+			//map.enableScrollZoom();
+
+			// Устанавливает начальные параметры отображения карты: центр карты и коэффициент масштабирования
+			map.setCenter(new YMaps.GeoPoint(27.71875350, 53.88282886), 6);
+
+			// Создает стиль
+			var s = new YMaps.Style();
+
+			// Создает стиль значка метки
+			s.iconStyle = new YMaps.IconStyle();
+			s.iconStyle.href = "images/marker.png";
+			s.iconStyle.size = new YMaps.Point(20, 29);
+			s.iconStyle.offset = new YMaps.Point(-11, -29);
+
+			// Создает метку
+			var placemarkMinsk = new YMaps.Placemark(new YMaps.GeoPoint(27.56071817,53.90595689), {style: s});
+
+			// Устанавливает содержимое балуна
+			placemarkMinsk.name = "Минск";
+
+			// Добавляет метку на карту
+			map.addOverlay(placemarkMinsk);
+		})
+	</script>
+</head>
+<body>
+<header class="header">
+	<div class="container header__container">
+		<div class="logo">
+			<a href=""><img src="images/logo.png" class="img-responsive" alt="Nuga Best"/></a>
+		</div>
+		<button aria-expanded="false" aria-controls="navbar" data-target="#navbar" data-toggle="collapse" type="button" class="navbar-toggle collapsed visible-xs">
+			<span class="sr-only">Toggle navigation</span>
+		</button>
+		<div class="clearfix visible-xs"></div>
+		<div class="header-tools collapse navbar-collapse" id="navbar">
+			<a href="#" class="btn-gray-small"><i class="icon-address"></i>Адреса салонов</a>
+			<div class="localization">
+				<div class="choose-country">
+					<select id="country" class="choose-country__el">
+						<option value="">Украина</option>
+						<option value="">Беларусь</option>
+					</select>
+				</div>
+				<ul class="language">
+					<li class="active"><a href="#">ru</a></li>
+					<li><a href="#">ua</a></li>
+				</ul>
+			</div>
+			<nav class="nav-holder">
+				<ul class="main-nav nav navbar-nav" id="main-nav">
+					<li><a href="personal-system.html">Система долголетия</a></li>
+					<li><a href="recovery-methods.html">Методы оздоровления</a></li>
+					<li><a href="reviews.html">Отзывы и вопросы</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
+				</ul>
+			</nav>
+			<div class="search-block search-block_style">
+				<form action="#" class="search-form">
+					<input type="search" class="form-control" placeholder="В каком городе ищете салон" />
+				</form>
+				<a href="" class="btn-search"><i class="icon-search"></i></a>
+			</div>
+		</div>
+		<a href="#" class="btn-sub-primary">О Нуга бест</a>
+	</div>
+</header>
+
+<main class="main">
+	<div class="container">
+		<div class="row">
+			<!-- <div class="col-sm-5 col-md-3">
+				<aside class="aside aside-affix">
+					<a href="list-salons.html" class="btn btn-alt btn-block btn-back"><i class="icon-back"></i>Вернуться к списку салонов</a>
+					<div class="search-block_style search-block_normal">
+						<form action="#" class="search-form">
+							<input type="search" class="form-control" placeholder="Поиск салонов по городу..." />
+						</form>
+						<a href="" class="btn-search"><i class="icon-search"></i></a>
+					</div>
+					<div class="sidebar-menu">
+						<h3>Салоны в Беларуси</h3>
+						<div class="panel-group" id="accordion">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="btn-block collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Минск<span class="count">20</span><i class="icon-arrow-small"></i></a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Салон №1</a></li>
+											<li><a href="#">Салон №2</a></li>
+											<li><a href="#">Салон №3</a></li>
+											<li><a href="#">Салон №4</a></li>
+											<li><a href="#">Салон №5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="btn-block collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsetwo">Брест<span class="count">20</span><i class="icon-arrow-small"></i></a>
+									</h4>
+								</div>
+								<div id="collapsetwo" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Салон №1</a></li>
+											<li><a href="#">Салон №2</a></li>
+											<li><a href="#">Салон №3</a></li>
+											<li><a href="#">Салон №4</a></li>
+											<li><a href="#">Салон №5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="btn-block collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsesix">Могилев<span class="count">20</span><i class="icon-arrow-small"></i></a>
+									</h4>
+								</div>
+								<div id="collapsesix" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Салон №1</a></li>
+											<li><a href="#">Салон №2</a></li>
+											<li><a href="#">Салон №3</a></li>
+											<li><a href="#">Салон №4</a></li>
+											<li><a href="#">Салон №5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div> -->
+			<div class="col-sm-7 col-sm-push-5 col-md-8 col-md-push-3 col-md-offset-1">
+				<h1 class="h2 text-center"><span class="element-line">Минск салон №1</span></h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus яaccumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+				<div class="carousel carousel_arrow-thin">
+					<div class="slideset product-carousel1">
+						<div class="slide">
+							<img class="img-responsive" src="images/slide4.jpg" alt="">
+						</div>
+						<div class="slide">
+							<img class="img-responsive" src="images/slide4.jpg" alt="">
+						</div>
+						<div class="slide">
+							<img class="img-responsive" src="images/slide4.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+				<div class="opinions">
+					<h2><span class="element-line">Руководитель салона</span></h2>
+					<div class="media media-block media-block_opinions">
+						<div class="media-left text-center">
+							<a href="#">
+								<img class="media-object img-circle center-block" src="images/photo31.png" alt="">
+							</a>
+							<span class="profession element-line">Врач</span>
+						</div>
+						<div class="media-body">
+							<span class="full-name element-line">Перепилица Дмитрий Владимирович</span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+						</div>
+					</div>
+					<div class="media media-block media-block_opinions">
+						<div class="media-left text-center">
+							<a href="#">
+								<img class="media-object img-circle center-block" src="images/photo32.png" alt="">
+							</a>
+						</div>
+						<div class="media-body">
+							<span class="full-name element-line">Симонов Дмитрий Владимирович</span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+						</div>
+					</div>
+				</div>
+				<div class="contacts-salon">
+					<h2 class="text-center"><span class="element-line">Контактная информация салона</span></h2>
+					<div class="wrap-column">
+						<div class="column text-center">
+							<i class="icon-address"></i>
+							<dl>
+								<dt>Адрес:</dt>
+									<dd>ул. Набережная 12А</dd>
+							</dl>
+						</div>
+						<div class="column text-center">
+							<i class="icon-phone center-block"></i>
+							<dl>
+								<dt>Контактный телефон:</dt>
+									<dd><strong>+375</strong> 17 111 11 11</dd>
+									<dd><strong>+375</strong> 29 222 22 22</dd>
+							</dl>
+						</div>
+						<div class="column text-center">
+							<i class="icon-clock"></i>
+							<dl>
+								<dt>Время работы:</dt>
+									<dd><strong>пн-пт </strong>8:00 - 19:00</dd>
+									<dd><strong>сб: </strong>9:00 - 17:00</dd>
+							</dl>
+						</div>
+						<div class="column text-center">
+							<i class="icon-connect"></i>
+							<p><strong>Email: </strong><a href="mailto:mail@mail.by">mail@mail.by</a></p>
+							<p><strong>Skype: </strong>name</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+							<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#send-sms"><i class="icon-letter"></i>Отправить сообщение в салон</button>
+						</div>
+					</div>
+				</div>
+				<div id="ymaps" style="height:285px"></div>
+			</div>
+			<div class="col-sm-5 col-sm-pull-7 col-md-pull-9 col-md-3">
+				<aside class="aside aside-affix">
+					<a href="list-salons.html" class="btn btn-alt btn-block btn-back"><i class="icon-back"></i>Вернуться к списку салонов</a>
+					<div class="search-block_style search-block_normal">
+						<form action="#" class="search-form">
+							<input type="search" class="form-control" placeholder="Поиск салонов по городу..." />
+						</form>
+						<a href="" class="btn-search"><i class="icon-search"></i></a>
+					</div>
+					<div class="sidebar-menu">
+						<h3>Салоны в Беларуси</h3>
+						<div class="panel-group" id="accordion">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="btn-block collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Минск<span class="count">20</span><i class="icon-arrow-small"></i></a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#" class="active">Салон №1</a></li>
+											<li><a href="#">Салон №2</a></li>
+											<li><a href="#">Салон №3</a></li>
+											<li><a href="#">Салон №4</a></li>
+											<li><a href="#">Салон №5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="btn-block collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsetwo">Брест<span class="count">20</span><i class="icon-arrow-small"></i></a>
+									</h4>
+								</div>
+								<div id="collapsetwo" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Салон №1</a></li>
+											<li><a href="#">Салон №2</a></li>
+											<li><a href="#">Салон №3</a></li>
+											<li><a href="#">Салон №4</a></li>
+											<li><a href="#">Салон №5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a class="btn-block collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsesix">Могилев<span class="count">20</span><i class="icon-arrow-small"></i></a>
+									</h4>
+								</div>
+								<div id="collapsesix" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Салон №1</a></li>
+											<li><a href="#">Салон №2</a></li>
+											<li><a href="#">Салон №3</a></li>
+											<li><a href="#">Салон №4</a></li>
+											<li><a href="#">Салон №5</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div> 
+</main>
+
+<footer class="footer footer_decor">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-5">
+				<div class="copyright">
+					Нуга Бест © 2016
+				</div>
+				<div class="contacts">
+					<span class="contact-tel">
+						<i class="icon-phone"></i><span class="contact-tel__decor">+375</span> 29 123 45 67
+					</span>
+					<button class="call" data-toggle="modal" data-target="#callback">Заказать звонок</button>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-5 col-sm-offset-2">
+				<a href="#" class="btn-gray-small"><i class="icon-address"></i>Адреса салонов</a>
+				<div class="site-dev">
+					<a href="http://egorovagency.by">
+						<span class="site-dev__logo">
+						</span>
+						<div class="site-dev__content">
+							Разработка сайта<br>Egorov agency
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="modal fade" id="send-sms" tabindex="-1" role="dialog"  aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h5>Отправить сообщение в салон</h5>
+			</div>
+			<div class="modal-body text-center">
+				<form class="common-form center-block">
+					<input type="text" required class="form-control" placeholder="Фамилия">
+					<input type="text" required class="form-control" placeholder="Имя">
+					<input type="text" required class="form-control" placeholder="Отчество">
+					<input type="tel" required class="form-control" placeholder="Ваш телефон">
+					<input type="email" required class="form-control" placeholder="Email">
+					<textarea class="form-control" required>Сообщение</textarea>
+					<button type="submit" class="btn btn-primary btn-block">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="callback" tabindex="-1" role="dialog"  aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h5>Заказать звонок</h5>
+			</div>
+			<div class="modal-body text-center">
+				<form class="common-form center-block">
+					<input type="text" required class="form-control" placeholder="Фамилия">
+					<input type="text" required class="form-control" placeholder="Имя">
+					<input type="text" required class="form-control" placeholder="Отчество">
+					<input type="tel" required class="form-control" placeholder="Ваш телефон">
+					<button type="submit" class="btn btn-primary btn-block">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/vendors/bootstrap.min.js"></script>
+<script src="js/vendors/slick.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/jquery.main.js"></script>
+</body>
+</html>

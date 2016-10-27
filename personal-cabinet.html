@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>NugaBest</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/select2.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href='https://fonts.googleapis.com/css?family=Exo+2:400,100&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header class="header">
+	<div class="container header__container">
+		<div class="logo">
+			<a href=""><img src="images/logo.png" class="img-responsive" alt="Nuga Best"/></a>
+		</div>
+		<button aria-expanded="false" aria-controls="navbar" data-target="#navbar" data-toggle="collapse" type="button" class="navbar-toggle collapsed visible-xs">
+			<span class="sr-only">Toggle navigation</span>
+		</button>
+		<div class="clearfix visible-xs"></div>
+		<div class="header-tools collapse navbar-collapse" id="navbar">
+			<a href="#" class="btn-gray-small"><i class="icon-address"></i>Адреса салонов</a>
+			<div class="localization">
+				<div class="choose-country">
+					<select id="country" class="choose-country__el">
+						<option value="">Украина</option>
+						<option value="">Беларусь</option>
+					</select>
+				</div>
+				<ul class="language">
+					<li class="active"><a href="#">ru</a></li>
+					<li><a href="#">ua</a></li>
+				</ul>
+			</div>
+			<nav class="nav-holder">
+				<ul class="main-nav nav navbar-nav" id="main-nav">
+					<li><a href="personal-system.html">Система долголетия</a></li>
+					<li><a href="recovery-methods.html">Методы оздоровления</a></li>
+					<li><a href="reviews.html">Отзывы и вопросы</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
+				</ul>
+			</nav>
+			<div class="search-block search-block_style">
+				<form action="#" class="search-form">
+					<input type="search" class="form-control" placeholder="В каком городе ищете салон?" />
+				</form>
+				<a href="" class="btn-search"><i class="icon-search"></i></a>
+			</div>
+		</div>
+		<a href="#" class="btn-sub-primary">О Нуга бест</a>
+	</div>
+</header>
+<main class="main">
+	<div class="container">
+		<div class="side-offset">
+			<h1 class="h2 text-center"><span class="element-line">Личный кабинет</span></h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+			<ul class="nav-tabs text-center tabs-style">
+				<li class="active"><a class="btn-gray" href="#personal" data-toggle="tab"><i class="icon-man"></i>Персональная информация</a></li>
+				<li><a class="btn-gray" href="#bonuses" data-toggle="tab"><i class="icon-gift"></i>Бонусы и баллы</a></li>
+				<li><a class="btn-gray" href="#support" data-toggle="tab"><i class="icon-wheel"></i>Техническая поддержка</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="personal">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.</p>
+					<form class="form form-personal">
+						<div class="row">
+							<div class="col-sm-5 col-md-4">
+								<div class="form-personal__photo">
+									<img src="images/photo.jpg" alt="">
+									<div class="control-file text-center">
+										<label for="input-file">Загрузить свою фотографию</label>
+										<span class="control-file__mark">( макс. 500 кб )</span>
+									</div>
+									<input type="file" id="input-file" class="form-control">
+								</div>
+							</div>
+							<div class="col-sm-7 col-md-8">
+								<div class="row">
+									<div class="col-sm-6">
+										<label for="inputLast-name">Фамилия:</label>
+										<input type="text" class="form-control" id="inputLast-name" placeholder="Сидоров">
+									</div>
+									<div class="col-sm-6">
+										<label for="inputPhone">Телефон:</label>
+										<input type="tel" class="form-control" id="inputPhone" placeholder="+375 (99) -778-37-55">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<label for="inputName">Имя:</label>
+										<input type="text" class="form-control" id="inputName" placeholder="Григорий">
+									</div>
+									<div class="col-sm-6">
+										<label for="inputDate">Дата рождения:</label>
+										<input type="text" class="form-control" id="inputDate" placeholder="21.03.82">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<label for="inputSecond-name">Отчество:</label>
+										<input type="text" class="form-control" id="inputSecond-name" placeholder="Васильевич">
+									</div>
+									<div class="col-sm-6">
+										<label for="inputPassport">Номер паспорта:</label>
+										<input type="text" class="form-control" id="inputPassport" placeholder="МР7593958">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputAddress">Адрес:</label>
+									<div class="row">
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="inputAddress" placeholder="Город">
+										</div>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="Улица">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-4">
+											<input type="number" class="form-control" placeholder="Номер дома">
+										</div>
+										<div class="col-sm-4">
+											<input type="text" class="form-control" placeholder="Корпус">
+										</div>
+										<div class="col-sm-4">
+											<input type="number" class="form-control" placeholder="Квартира">
+										</div>
+									</div>
+								</div>
+								<button type="submit" class="btn btn-gray"><i class="icon-change"></i>Изменить данные</button>
+								<button class="save">Сохранить</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="tab-pane" id="bonuses">
+					<span class="name">Иванов Иван Иванович</span>
+					<div class="points">
+						<strong class="points__title">Накопленные бонусные баллы: </strong>
+						<span class="points__counter">50</span>
+					</div>
+					<p>Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+				</div>
+				<div class="tab-pane" id="support">
+					<p>Информация о связи с техподдержкойLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+					<strong class="ask">Задать вопрос</strong>
+					<p>Если у Вас возникли вопросы по работе сайта или другие интересующие Вас вопросы, мы всегда готовы ответить:</p>
+					<form class="form form-contact">
+						<textarea class="form-control" placeholder="Введите текст Вашего вопроса "></textarea>
+						<button type="submit" class="btn btn-gray">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer class="footer footer_decor">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-5">
+				<div class="copyright">
+					Нуга Бест © 2016
+				</div>
+				<div class="contacts">
+					<span class="contact-tel">
+						<i class="icon-phone"></i><span class="contact-tel__decor">+375</span> 29 123 45 67
+					</span>
+					<button class="call" data-toggle="modal" data-target="#callback">Заказать звонок</button>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-5 col-sm-offset-2">
+				<a href="#" class="btn-gray-small"><i class="icon-address"></i>Адреса салонов</a>
+				<div class="site-dev">
+					<a href="http://egorovagency.by">
+						<span class="site-dev__logo">
+						</span>
+						<div class="site-dev__content">
+							Разработка сайта<br>Egorov agency
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="modal fade" id="callback" tabindex="-1" role="dialog"  aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header text-center">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h5>Заказать звонок</h5>
+			</div>
+			<div class="modal-body text-center">
+				<form class="common-form center-block">
+					<input type="text" required class="form-control" placeholder="Фамилия">
+					<input type="text" required class="form-control" placeholder="Имя">
+					<input type="text" required class="form-control" placeholder="Отчество">
+					<input type="tel" required class="form-control" placeholder="Ваш телефон">
+					<button type="submit" class="btn btn-primary btn-block">Отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/vendors/bootstrap.min.js"></script>
+<script src="js/vendors/slick.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/jquery.main.js"></script>
+</body>
+</html>
